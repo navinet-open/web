@@ -3,12 +3,11 @@ const today = new Date();
 ---
 
 <footer>
-  <section class="container">
+  <section class="container flex">
     <a href="/about">About</a>
-    &bull;
     <a href="/rss.xml">RSS</a>
-    &bull;
-    <a href="/sitemap">Sitemap</a>
+    <a href="/sitemap-index.xml">Sitemap</a>
+    <a href="/about/privacy">Privacy Policy</a>
   </section>
   <section class="container">
     <p>&copy; {today.getFullYear()} NaviNet</p>
@@ -18,14 +17,30 @@ const today = new Date();
   footer {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0 0.5rem;
     background: var(--color-bg-variant);
-    gap: 1rem;
     max-width: var(--breakpoint);
   }
   footer section.container {
     text-align: center;
     font-size: 0.9rem;
     padding: 0.25rem 0.5rem;
+  }
+  footer section.flex {
+    display: flex;
+    gap: 0.75rem;
+  }
+  footer section.flex a:first-child {
+    border-left: 0;
+    padding-left: 0;
+  }
+  a {
+    padding-left: 0.75rem;
+    border-left: var(--color-border-subtle);
+    text-decoration: ;
+  }
+  p {
+    color: var(--color-text-muted);
   }
 </style>

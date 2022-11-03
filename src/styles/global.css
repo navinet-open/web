@@ -9,7 +9,7 @@
       #225dab,
       rgb(16, 78, 153)
     )
-    no-repeat fixed 0% 0%;
+    no-repeat 0% 0%;
   --color-bg-container: rgba(0, 0, 0, 0.15);
   --color-bg-variant: #282828;
   /* element colors */
@@ -96,11 +96,17 @@ hr {
   border-bottom: var(--color-border-subtle);
 }
 
-code {
+code,
+.code {
   padding: 0.25rem 0.5rem;
-  display: inline-block;
+  display: block;
   background: var(--color-bg-container);
   border-radius: var(--radius-1);
   border: var(--color-border-subtle);
   box-shadow: var(--color-container-shadow);
+}
+
+br.br-small {
+  display: block;
+  margin: 0.25rem;
 }
