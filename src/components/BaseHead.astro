@@ -1,0 +1,47 @@
+---
+import "../styles/global.css";
+import "../styles/ui.css";
+
+const { title, description } = Astro.props;
+
+export interface Props {
+  title: string;
+  description: string;
+}
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" type="image/png" href="/img/favicon.png" />
+<link
+  rel="apple-touch-icon-precomposed"
+  type="image/png"
+  href="/img/favicon.png"
+/>
+<title>{title}</title>
+
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FFNX3PF99E"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-FFNX3PF99E");
+</script>

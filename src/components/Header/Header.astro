@@ -1,0 +1,50 @@
+---
+import HeaderUtil from "./HeaderUtil.astro";
+---
+
+<header>
+  <section class="header-title user-select">
+    <h1>NaviNet.tk</h1>
+  </section>
+  <nav>
+    <HeaderUtil href="/services">Services</HeaderUtil>
+    <HeaderUtil href="/news">News</HeaderUtil>
+    <HeaderUtil href="/blog">Blog</HeaderUtil>
+    <HeaderUtil href="/about">About</HeaderUtil>
+  </nav>
+</header>
+
+<style>
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+  section.header-title {
+    display: flex;
+    align-items: center;
+    align-items: baseline;
+    padding: 1rem 1rem 0 1rem;
+    font-family: var(--font-brand);
+  }
+  section.header-title h1 {
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  section.header-title p {
+    margin-left: 1rem;
+    font-style: italic;
+    line-height: 1.2;
+  }
+  header nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-inline: 1rem;
+    padding: 0.2rem 1rem;
+    border: var(--color-border-subtle);
+    border-radius: var(--radius-2);
+    box-shadow: var(--color-container-shadow);
+    background-color: var(--color-bg-container);
+  }
+</style>

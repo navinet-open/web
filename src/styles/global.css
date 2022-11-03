@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  /* background colors */
+  --color-body: #0d3b77;
+  --color-main-content: linear-gradient(
+      180deg,
+      #306aaf,
+      #225dab,
+      rgb(16, 78, 153)
+    )
+    no-repeat fixed 0% 0%;
+  --color-bg-container: rgba(0, 0, 0, 0.15);
+  --color-bg-variant: #282828;
+  /* element colors */
+  --color-text: #fff;
+  --color-href: #6fcaff;
+  --color-href-hover: #a2dbff;
+  --color-text-muted: #ffffff85;
+  --color-border: 1px solid #00000059;
+  --color-border-subtle: 1px solid rgba(255, 255, 255, 0.35);
+
+  --color-text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+
+  --color-container-shadow: 0px 0px 4px rgba(0, 0, 0, 0.35);
+
+  --shadow-main: 0 4px 25px rgba(0, 0, 0, 0.12),
+    inset -1px 0 rgba(255, 255, 255, 0.25),
+    inset 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0px 1px rgba(255, 255, 255, 0.25),
+    inset 0px -1px rgba(255, 255, 255, 0.25);
+
+  --shadow-negative: -1px -1px 4px rgba(0, 0, 0, 0.1);
+
+  --font-body: "Inter", sans-serif;
+  --font-brand: "Poppins", sans-serif;
+
+  --radius-1: 4px;
+  --radius-2: 8px;
+
+  --radius-3: 16px;
+
+  --breakpoint: 920px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0 1rem 0 1rem;
+  background: var(--color-body);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-position: inside;
+  padding: 0;
+}
+
+a {
+  color: var(--color-href);
+}
+
+a:hover {
+  color: var(--color-href-hover);
+  text-decoration: underline;
+}
+
+hr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  margin: 1rem 0;
+  border-bottom: var(--color-border-subtle);
+}
+
+code {
+  padding: 0.25rem 0.5rem;
+  display: inline-block;
+  background: var(--color-bg-container);
+  border-radius: var(--radius-1);
+  border: var(--color-border-subtle);
+  box-shadow: var(--color-container-shadow);
+}

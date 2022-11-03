@@ -1,0 +1,19 @@
+<aside class="col sidebar">
+  <slot />
+</aside>
+
+<style is:inline>
+  aside.sidebar {
+    padding: 0 1rem 1rem 1rem;
+  }
+  aside.sidebar h1.side-title {
+    font-family: var(--font-brand);
+    opacity: 0.7;
+    font-weight: 500;
+  }
+  aside.sidebar .side-placeholder {
+    text-align: center;
+    font-style: italic;
+    color: var(--color-text-muted);
+  }
+</style>

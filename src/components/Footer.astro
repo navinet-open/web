@@ -1,0 +1,31 @@
+---
+const today = new Date();
+---
+
+<footer>
+  <section class="container">
+    <a href="/about">About</a>
+    &bull;
+    <a href="/rss.xml">RSS</a>
+    &bull;
+    <a href="/sitemap">Sitemap</a>
+  </section>
+  <section class="container">
+    <p>&copy; {today.getFullYear()} NaviNet</p>
+  </section>
+</footer>
+<style>
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: var(--color-bg-variant);
+    gap: 1rem;
+    max-width: var(--breakpoint);
+  }
+  footer section.container {
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 0.25rem 0.5rem;
+  }
+</style>

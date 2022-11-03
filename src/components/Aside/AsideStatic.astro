@@ -1,0 +1,34 @@
+---
+import Marquee from "../Addons/Marquee.astro";
+---
+
+<!-- buttons -->
+<h1 class="side-title first">Websites</h1>
+<section class="card aside-card-marquee">
+  <Marquee>
+    <img src="/buttons/web3.gif" alt="Say No To WEB 3" />
+    <img src="/buttons/modarchive.gif" alt="Mod Archive" />
+    <img src="/buttons/archlinux.gif" alt="Arch Linux" />
+    <img src="/buttons/navinet.png" alt="NaviNet" />
+  </Marquee>
+</section>
+<h1 class="side-title first">Promotion</h1>
+<iframe
+  class="neolink"
+  src="https://googol.neocities.org/neolink/embed.html"
+  name="neolink"></iframe>
+
+<style>
+  section.aside-card-marquee {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+  }
+  iframe.neolink {
+    width: 100%;
+    border-radius: var(--radius-2);
+    border: var(--color-border-subtle);
+    box-shadow: var(--color-container-shadow);
+  }
+</style>
