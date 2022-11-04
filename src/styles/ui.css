@@ -1,11 +1,5 @@
 /* container */
 
-.row {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 240px;
-}
-
 div.main-container {
   margin: 1rem auto 1rem auto;
   border-radius: var(--radius-2);
@@ -21,9 +15,7 @@ section.content {
   margin-bottom: 1rem;
   background-color: var(--color-bg-container);
   border-radius: var(--radius-3);
-  border-top: var(--color-border-subtle);
-  border-right: var(--color-border-subtle);
-  border-bottom: var(--color-border-subtle);
+  border: var(--color-border-subtle);
   box-shadow: var(--shadow-negative);
   text-shadow: var(--color-text-shadow);
 }
@@ -69,11 +61,17 @@ section.paragraph {
   text-align: center;
 }
 
-@media (max-width: 700px) {
+@media (min-width: 800px) {
   .row {
-    grid-template-columns: 1fr;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
   }
+}
+
+@media (max-width: 800px) {
   section.content {
+    border-left: 0;
     border-right: 0;
   }
 }

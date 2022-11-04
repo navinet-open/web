@@ -38,9 +38,19 @@ const today = new Date();
   a {
     padding-left: 0.75rem;
     border-left: var(--color-border-subtle);
-    text-decoration: ;
   }
   p {
     color: var(--color-text-muted);
+  }
+  @media (max-width: 500px) {
+    footer section.flex {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+    }
+    a {
+      padding-left: 0;
+      border-left: 0;
+    }
   }
 </style>

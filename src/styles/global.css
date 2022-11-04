@@ -3,13 +3,7 @@
 :root {
   /* background colors */
   --color-body: #0d3b77;
-  --color-main-content: linear-gradient(
-      180deg,
-      #306aaf,
-      #225dab,
-      rgb(16, 78, 153)
-    )
-    no-repeat 0% 0%;
+  --color-main-content: #2f69af;
   --color-bg-container: rgba(0, 0, 0, 0.15);
   --color-bg-variant: #282828;
   /* element colors */
@@ -40,7 +34,7 @@
 
   --radius-3: 16px;
 
-  --breakpoint: 920px;
+  --breakpoint: 1080px;
 }
 
 *,
