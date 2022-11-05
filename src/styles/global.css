@@ -8,8 +8,8 @@
   --color-bg-variant: #282828;
   /* element colors */
   --color-text: #fff;
-  --color-href: #6fcaff;
-  --color-href-hover: #a2dbff;
+  --color-href: #8ed6ff;
+  --color-href-hover: #bde6ff;
   --color-text-muted: #ffffff85;
   --color-border: 1px solid #00000059;
   --color-border-subtle: 1px solid rgba(255, 255, 255, 0.35);
@@ -41,6 +41,12 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
 }
 
 body {

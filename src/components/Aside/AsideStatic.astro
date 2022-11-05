@@ -1,70 +1,70 @@
 ---
-import Marquee from "../Addons/Marquee.astro";
 import MarqueeButton from "../Addons/MarqueeButton.astro";
 ---
 
 <!-- buttons -->
 <h1 class="side-title first">Websites</h1>
-<section class="card aside-card-marquee">
-  <Marquee>
-    <MarqueeButton
-      href="https://yesterweb.org/no-to-web3/"
-      img="/buttons/web3.gif"
-      text="Say no to Web3"
-    />
-    <MarqueeButton
-      href="https://modarchive.org/"
-      img="/buttons/modarchive.gif"
-      text="The Mod Archive"
-    />
-    <MarqueeButton
-      href="https://creativecommons.org/"
-      img="/buttons/cc-some.gif"
-      text="Creative Commons"
-    />
-    <MarqueeButton
-      href="https://www.anybrowser.org/campaign/"
-      img="/buttons/any88x31.gif"
-      text="Any Browser"
-    />
-    <MarqueeButton
-      href="https://openbooks.neocities.org/campaign/"
-      img="/buttons/openbooks.gif"
-      text="OpenBooks"
-    />
-    <MarqueeButton
-      href="https://www.youtube.com/channel/UCalh0YLyCq-SJ1v2-j9VyJQ"
-      img="/buttons/ytbutton.gif"
-      text="YouTube"
-    />
-  </Marquee>
+<section class="card aside-buttons">
+  <MarqueeButton
+    href="https://yesterweb.org/no-to-web3/"
+    img="/buttons/web3.gif"
+    text="Say no to Web3"
+  />
+  <MarqueeButton
+    href="https://modarchive.org/"
+    img="/buttons/modarchive.gif"
+    text="The Mod Archive"
+  />
+  <MarqueeButton
+    href="https://creativecommons.org/"
+    img="/buttons/cc-some.gif"
+    text="Creative Commons"
+  />
+  <MarqueeButton
+    href="https://www.anybrowser.org/campaign/"
+    img="/buttons/any88x31.gif"
+    text="Any Browser"
+  />
+  <MarqueeButton
+    href="https://openbooks.neocities.org/"
+    img="/buttons/openbooks.gif"
+    text="OpenBooks"
+  />
+  <MarqueeButton
+    href="https://www.youtube.com/channel/UCalh0YLyCq-SJ1v2-j9VyJQ"
+    img="/buttons/ytbutton.gif"
+    text="YouTube"
+  />
 </section>
 <h1 class="side-title first">Software</h1>
-<section class="card aside-card-marquee">
-  <Marquee>
-    <MarqueeButton
-      href="https://7-zip.org/"
-      img="/buttons/7zip.gif"
-      text="7-Zip"
-    />
-    <MarqueeButton
-      href="https://www.mozilla.org/en-US/firefox/new/"
-      img="/buttons/firefox2.gif"
-      text="Firefox"
-    />
-    <MarqueeButton
-      href="https://www.winamp.com/"
-      img="/buttons/winamp-miniban.gif"
-      text="Winamp"
-    />
-  </Marquee>
+<section class="card aside-buttons">
+  <MarqueeButton
+    href="https://7-zip.org/"
+    img="/buttons/7zip.gif"
+    text="7-Zip"
+  />
+  <MarqueeButton
+    href="https://www.mozilla.org/en-US/firefox/new/"
+    img="/buttons/firefox2.gif"
+    text="Firefox"
+  />
+  <MarqueeButton
+    href="https://www.winamp.com/"
+    img="/buttons/winamp-miniban.gif"
+    text="Winamp"
+  />
+  <MarqueeButton
+    href="https://vscodium.com/"
+    img="/buttons/vscbutton.gif"
+    text="Visual Studio Code"
+  />
 </section>
 
 <style>
-  section.aside-card-marquee {
-    display: flex;
-    flex-direction: column;
+  section.aside-buttons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    overflow: hidden;
   }
 </style>

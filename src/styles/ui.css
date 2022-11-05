@@ -20,6 +20,14 @@ section.content {
   text-shadow: var(--color-text-shadow);
 }
 
+section.content-left {
+  border: 0;
+  border-top: var(--color-border-subtle);
+  border-right: var(--color-border-subtle);
+  border-bottom: var(--color-border-subtle);
+  border-left: 0;
+}
+
 section.paragraph {
   padding: 1rem;
   max-width: 65ch;
@@ -32,6 +40,10 @@ section.paragraph {
   outline: var(--color-border-subtle);
   box-shadow: var(--color-container-shadow);
   background-color: var(--color-bg-container);
+}
+
+.card-ul > li {
+  margin-left: 1rem;
 }
 
 .subtitle {

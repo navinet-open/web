@@ -24,6 +24,12 @@ const { content } = Astro.props;
         padding-bottom: 0.2rem;
         margin-bottom: 0.5rem;
       }
+      section.content {
+        border-left: none;
+      }
+      h1.heading {
+        font-size: 1.75rem;
+      }
     </style>
   </head>
   <body>
@@ -31,7 +37,7 @@ const { content } = Astro.props;
       <Stats />
       <Header />
       <div class="row">
-        <section class="col content">
+        <section class="col content content-left">
           <slot />
         </section>
         <Aside>
