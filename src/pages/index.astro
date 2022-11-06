@@ -1,55 +1,45 @@
 ---
 import HomeLayout from "../layouts/HomeLayout.astro";
-import Aside from "../components/Aside/Aside.astro";
 
 const title = "NaviNet";
 const description = "The open source web portal";
 ---
 
 <HomeLayout title={title} description={description}>
-  <main>
-    <div class="row top-br">
-      <Aside>
-        <h1 class="side-title">Services</h1>
-        <section class="card side-placeholder">coming soon</section>
-      </Aside>
-      <section class="col content content-right">
-        <h1>In construction</h1>
-        <p>
-          As of now NaviNet is on a alpha stage meaning that most of the website
-          functionality or it doesn't work or being changed.
-        </p>
-        <hr />
-        <p class="subtitle">Welcome to <b>NaviNet</b></p>
-        <p>
-          NaviNet is a web portal created for those who love the old net but
-          also for those who hate the new web and want to take back the internet
-          and return to the good old times.
-        </p>
-        <p>
-          Learn more about us on the <a href="/about">about</a> page. Thanks for
-          using NaviNet!
-        </p>
-        <hr />
-        <p class="subtitle">Support NaviNet</p>
-        <p>If you like to support us just add our button to your website!</p>
-        <a
-          class="href-img"
-          href="http://navinet-open.github.io"
-          aria-label="NaviNet Button"
-          ><img
-            src="/buttons/navinet.png"
-            style="image-rendering:pixelated; width:88px; height:31px;"
-            alt="NaviNet Button"
-          />
-        </a>
-        <code>
-          &lt;a href="http://navinet-open.github.io" aria-label="NaviNet
-          Button"&gt;&lt;img src="/buttons/navinet.png"
+  <section class="pod">
+    <p class="title-bar">About NaviNet</p>
+    <section class="inner-pod">
+      <p>
+        NaviNet is a web portal created for those who love the old net but also
+        for those who hate the new web and want to take back the internet and
+        return to the good old times.
+      </p>
+      <p>
+        Learn more about us on the <a href="/about">about</a> page. Thanks for using
+        NaviNet!
+      </p>
+    </section>
+  </section>
+  <section class="pod">
+    <p class="title-bar">Support NaviNet</p>
+    <section class="inner-pod">
+      <p>If you like to support us just add our button to your website!</p>
+      <a
+        class="href-img"
+        href="http://navinet-open.github.io"
+        aria-label="NaviNet Button"
+        ><img
+          src="/buttons/navinet.png"
           style="image-rendering:pixelated; width:88px; height:31px;"
-          alt="NaviNet Button"/&gt;&lt;/a&gt;
-        </code>
-      </section>
-    </div>
-  </main>
+          alt="NaviNet Button"
+        />
+      </a>
+      <code>
+        &lt;a href="http://navinet-open.github.io" aria-label="NaviNet
+        Button"&gt;&lt;img src="/buttons/navinet.png"
+        style="image-rendering:pixelated; width:88px; height:31px;" alt="NaviNet
+        Button"/&gt;&lt;/a&gt;
+      </code>
+    </section>
+  </section>
 </HomeLayout>

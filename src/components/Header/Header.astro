@@ -1,51 +1,76 @@
 ---
-import HeaderUtil from "./HeaderUtil.astro";
+import HeaderButtons from "./HeaderButtons.astro";
+import HeaderLinks from "./HeaderLinks.astro";
 ---
 
-<header>
-  <section class="header-title user-select">
-    <h1>NaviNet.tk</h1>
-  </section>
+<header class="user-select">
+  <a class="go-to-index" href="/">NaviNet</a>
   <nav>
-    <HeaderUtil href="/services">Services</HeaderUtil>
-    <HeaderUtil href="/search">Search NEW</HeaderUtil>
-    <HeaderUtil href="/news">News</HeaderUtil>
-    <HeaderUtil href="/blog">Blog</HeaderUtil>
-    <HeaderUtil href="/about">About</HeaderUtil>
+    <HeaderLinks href="/news">News</HeaderLinks>
+    <HeaderLinks href="/about">About</HeaderLinks>
   </nav>
 </header>
+
+<nav class="superbar">
+  <HeaderButtons href="/search">Search</HeaderButtons>
+  <HeaderButtons href="/games">Games</HeaderButtons>
+</nav>
 
 <style>
   header {
     display: flex;
-    flex-direction: column;
-  }
-  section.header-title {
-    display: flex;
     align-items: center;
-    align-items: baseline;
-    padding: 1rem 1rem 0 1rem;
-    font-family: var(--font-brand);
+    justify-content: space-between;
+    padding: 0.25rem 1rem 0.25rem 1rem;
+    box-shadow: var(--color-container-shadow);
+    background: var(--color-bg-container);
+    border: var(--color-border-subtle);
+    border-top: 0;
+    border-bottom-left-radius: var(--radius-1);
+    border-bottom-right-radius: var(--radius-1);
   }
-  section.header-title h1 {
-    font-size: 2.25rem;
+  header a.go-to-index {
+    font-family: "SquareFont";
+    font-size: 1.75rem;
     font-weight: 600;
-    color: var(--color-text);
+    background: #ffffff;
+    background: linear-gradient(to bottom, #ffffff 0%, #ffffff49 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
-  section.header-title p {
-    margin-left: 1rem;
-    font-style: italic;
-    line-height: 1.2;
+  header a.go-to-index {
+    text-decoration: none;
+  }
+  header a.go-to-index:hover {
+    color: var(--color-text);
+    text-decoration: underline;
   }
   header nav {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-inline: 1rem;
-    padding: 0.2rem 1rem;
-    border: var(--color-border-subtle);
-    border-radius: var(--radius-2);
-    box-shadow: var(--color-container-shadow);
+    padding: 0.25rem 1rem;
     background-color: var(--color-bg-container);
+    border: var(--color-border-subtle);
+    border-radius: var(--radius-1);
+    box-shadow: var(--color-container-shadow);
+  }
+  nav.superbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.25rem;
+    padding: 0.25rem;
+    margin: 1rem 0 1rem 0;
+    background-color: var(--color-bg-container);
+    border: var(--color-border-subtle);
+    border-radius: var(--radius-1);
+    box-shadow: var(--color-container-shadow);
+  }
+  @media (max-width: 500px) {
+    header {
+      flex-direction: column;
+      padding-bottom: 0.75rem;
+    }
   }
 </style>

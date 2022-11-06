@@ -1,0 +1,29 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header/Header.astro";
+import Footer from "../components/Footer.astro";
+import Aside from "../components/Aside/Aside.astro";
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <div class="main-container">
+    <Header />
+    <div class="row">
+      <Aside />
+      <section class="col cards-flex">
+        <section class="pod">
+          <p class="title-bar">{title}</p>
+          <section class="inner-pod">
+            <slot />
+          </section>
+        </section>
+      </section>
+    </div>
+  </div>
+  <Footer />
+</html>

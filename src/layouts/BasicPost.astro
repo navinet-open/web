@@ -2,9 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header/Header.astro";
 import Footer from "../components/Footer.astro";
-import Stats from "../components/Header/Stats.astro";
 import Aside from "../components/Aside/Aside.astro";
-import AsideStatic from "../components/Aside/AsideStatic.astro";
 
 const { content } = Astro.props;
 ---
@@ -13,38 +11,24 @@ const { content } = Astro.props;
   <head>
     <BaseHead title={content.title} description={content.description} />
     <style is:inline>
-      div.row {
-        margin-top: 1rem;
-      }
-      section.col {
-        text-shadow: var(--color-text-shadow);
-      }
-      section.col h1 {
-        border-bottom: var(--color-border-subtle);
-        padding-bottom: 0.2rem;
-        margin-bottom: 0.5rem;
-      }
-      section.content {
-        border-left: none;
-      }
-      h1.heading {
-        font-size: 1.75rem;
+      h1 {
+        font-size: 1.25rem;
       }
     </style>
   </head>
-  <body>
-    <div class="main-container">
-      <Stats />
-      <Header />
-      <div class="row">
-        <Aside>
-          <AsideStatic />
-        </Aside>
-        <section class="col content content-left">
-          <slot />
+  <div class="main-container">
+    <Header />
+    <div class="row">
+      <Aside />
+      <section class="col cards-flex">
+        <section class="pod">
+          <p class="title-bar">{content.title}</p>
+          <section class="inner-pod">
+            <slot />
+          </section>
         </section>
-      </div>
-      <Footer />
+      </section>
     </div>
-  </body>
+  </div>
+  <Footer />
 </html>

@@ -1,0 +1,71 @@
+---
+import MapLayout from "../../layouts/MapLayout.astro";
+import Paginator from "../../components/Paginator.astro";
+const allPosts = await Astro.glob("./*.mdx");
+const allCategoriesUnique = new Set();
+
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await Astro.glob("./*.mdx");
+  const sortedPosts = allPosts.sort(
+    (a, b) =>
+      new Date(b.frontmatter.date).valueOf() -
+      new Date(a.frontmatter.date).valueOf()
+  );
+  return paginate(sortedPosts, { pageSize: 5 });
+}
+
+allPosts.forEach((post) => {
+  post.frontmatter.categories &&
+    post.frontmatter.categories.map((category) => {
+      allCategoriesUnique.add(category);
+    });
+});
+
+const title = "NaviNet Games";
+const description = "Play all your favorite flash games on NaviNet Games";
+
+const { page } = Astro.props;
+---
+
+<MapLayout title={title} description={description}>
+  <ul class="games-ul cards">
+    {
+      page.data.map((page) => (
+        <li>
+          <a class="game-card" href={page.url}>
+            <span>
+              <img
+                class="game-banner"
+                src={page.frontmatter.image}
+                alt={page.frontmatter.title}
+              />
+            </span>
+            <span>{page.frontmatter.title}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <Paginator page={page} />
+</MapLayout>
+
+<style>
+  ul.games-ul {
+    list-style-type: none;
+  }
+  a.game-card {
+    padding: 0.75rem 0 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-container);
+    border: var(--color-border-subtle);
+    border-radius: var(--radius-1);
+    min-height: 120px;
+    max-height: 120px;
+  }
+  img.game-banner {
+    width: 100px;
+  }
+</style>

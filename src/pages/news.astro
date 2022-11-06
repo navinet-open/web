@@ -1,0 +1,40 @@
+---
+import MapLayout from "../layouts/ListLayout.astro";
+
+const posts = (await Astro.glob("./news/*.mdx")).sort(
+  (a, b) =>
+    new Date(b.frontmatter.pubDate).valueOf() -
+    new Date(a.frontmatter.pubDate).valueOf()
+);
+
+const title = "NaviNet News";
+const description = "Check the latest news from NaviNet developers";
+---
+
+<MapLayout title={title} description={description}>
+  <style>
+    ul.news-list {
+      display: flex;
+      flex-direction: column;
+      list-style-type: none;
+    }
+    a {
+      display: block;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    p {
+      margin-left: auto;
+    }
+  </style>
+  <ul class="news-list">
+    {
+      posts.map((post) => (
+        <li class="flex">
+          <a href={post.url}>{post.frontmatter.title}</a>
+          <p>{post.frontmatter.pubDate}</p>
+        </li>
+      ))
+    }
+  </ul>
+</MapLayout>

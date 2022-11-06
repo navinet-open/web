@@ -1,0 +1,59 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header/Header.astro";
+import Footer from "../components/Footer.astro";
+import AsideDynamic from "../components/Aside/AsideDynamic.astro";
+
+import { generateCategoryData } from "../utils/games_cat.js";
+const allPosts = await Astro.glob("../pages/games/*.mdx");
+const allCategoriesUnique = new Set();
+allPosts.forEach((post) => {
+  post.frontmatter.categories &&
+    post.frontmatter.categories.map((category) => {
+      allCategoriesUnique.add(category);
+    });
+});
+// console.log(allCategoriesUnique);
+const allCategoriesData = generateCategoryData(allCategoriesUnique);
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+
+  <div class="main-container">
+    <Header />
+    <div class="row">
+      <AsideDynamic>
+        <section class="pod">
+          <p class="title-bar">Categories</p>
+          <section class="inner-pod">
+            <ul class="ul-list">
+              {
+                allCategoriesData.map((category) => (
+                  <li>
+                    <a href={`/games/categories/${category.slug}`}>
+                      {category.name}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </section>
+        </section>
+      </AsideDynamic>
+      <section class="col cards-flex">
+        <section class="pod">
+          <p class="title-bar">{title}</p>
+          <section class="inner-pod">
+            <slot />
+          </section>
+        </section>
+      </section>
+    </div>
+  </div>
+  <Footer />
+</html>

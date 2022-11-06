@@ -1,0 +1,32 @@
+---
+import MapLayout from "../../../layouts/MapLayout.astro";
+import { generateCategoryData } from "../../../utils/games_cat.js";
+const allPosts = await Astro.glob("../*.mdx");
+const allCategoriesUnique = new Set();
+
+allPosts.forEach((post) => {
+  post.frontmatter.categories &&
+    post.frontmatter.categories.map((category) => {
+      allCategoriesUnique.add(category);
+    });
+});
+
+// console.log(allCategoriesUnique);
+
+const allCategoriesData = generateCategoryData(allCategoriesUnique);
+
+// console.log(allCategoriesData);
+const title = "Tags";
+---
+
+<MapLayout title={title}>
+  <ul>
+    {
+      allCategoriesData.map((category) => (
+        <li>
+          <a href={`/games/categories/${category.slug}`}>{category.name}</a>
+        </li>
+      ))
+    }
+  </ul>
+</MapLayout>

@@ -1,0 +1,34 @@
+---
+export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
+const { href, icon, alt, class: className, ...props } = Astro.props;
+const isActive = href === Astro.url.pathname.replace(/\/$/, "");
+---
+
+<a href={href} class:list={[className, { active: isActive }]} {...props}>
+  <span class="img"><img src={icon} alt={alt} /></span>
+  <span> <slot /></span>
+</a>
+<style>
+  a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.25rem;
+    font-family: "SquareFont";
+    letter-spacing: 2px;
+    background: var(--color-bg-container);
+    border: var(--color-border-subtle);
+    border-radius: var(--radius-1);
+    transition-duration: 100ms;
+  }
+  a:hover {
+    letter-spacing: 5px;
+    text-decoration: none;
+  }
+  a.active {
+    color: var(--color-text);
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.6),
+      0px 0px 25px rgba(255, 255, 255, 0.6);
+  }
+</style>

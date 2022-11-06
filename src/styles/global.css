@@ -1,14 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 :root {
   /* background colors */
-  --color-body: #0d3b77;
+  --color-body: #051e35;
   --color-main-content: linear-gradient(
     180deg,
     rgb(61, 115, 182) 0%,
     rgb(25, 81, 149) 100%
   );
-  --color-bg-container: rgba(0, 0, 0, 0.15);
+  --color-bg-container: rgba(0, 0, 0, 0.2);
   --color-bg-variant: #282828;
   /* element colors */
   --color-text: #fff;
@@ -18,27 +16,14 @@
   --color-border: 1px solid #00000059;
   --color-border-subtle: 1px solid rgba(255, 255, 255, 0.35);
 
-  --color-text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
-
   --color-container-shadow: 0px 0px 4px rgba(0, 0, 0, 0.35);
-
-  --shadow-main: 0 4px 25px rgba(0, 0, 0, 0.12),
-    inset -1px 0 rgba(255, 255, 255, 0.25),
-    inset 1px 0 rgba(255, 255, 255, 0.25),
-    inset 0px 1px rgba(255, 255, 255, 0.25),
-    inset 0px -1px rgba(255, 255, 255, 0.25);
-
-  --shadow-negative: -1px -1px 4px rgba(0, 0, 0, 0.1);
-
-  --font-body: "Inter", sans-serif;
-  --font-brand: "Poppins", sans-serif;
 
   --radius-1: 4px;
   --radius-2: 8px;
 
   --radius-3: 16px;
 
-  --breakpoint: 1080px;
+  --breakpoint: 980px;
 }
 
 *,
@@ -58,7 +43,7 @@ body {
   padding: 0 1rem 0 1rem;
   background: var(--color-body);
   color: var(--color-text);
-  font-family: var(--font-body);
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 1.7;
 }
@@ -80,6 +65,7 @@ p {
 
 ul {
   list-style-position: inside;
+  margin: 0;
   padding: 0;
 }
 
@@ -108,9 +94,4 @@ code,
   border-radius: var(--radius-1);
   border: var(--color-border-subtle);
   box-shadow: var(--color-container-shadow);
-}
-
-br.br-small {
-  display: block;
-  margin: 0.25rem;
 }

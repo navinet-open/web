@@ -1,0 +1,38 @@
+<div class="sidebar-mobile">
+  <aside class="col sidebar">
+    <slot />
+  </aside>
+</div>
+
+<style is:inline>
+  aside.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  aside.sidebar ul.ul-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+  }
+  aside.sidebar ul.ul-list li a {
+    display: block;
+    width: 100%;
+    list-style-type: none;
+  }
+  @media (max-width: 700px) {
+    div.sidebar-mobile {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    aside.sidebar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+    }
+  }
+</style>

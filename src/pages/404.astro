@@ -1,17 +1,15 @@
 ---
-import EmptyLayout from "../layouts/EmptyLayout.astro";
+import EmptyLayout from "../layouts/HomeLayout.astro";
 
 const title = "NaviNet";
 const description = "The open source web portal";
 ---
 
 <EmptyLayout title={title} description={description}>
-  <main class="align-center">
-    <h1>404 Not Found</h1>
-    <p>Looks like this page doesn't exist</p>
-    <br />
-    <img class="404-banner" src="/img/404.png" />
-    <br />
-    <a href="/">Go to index</a>
-  </main>
+  <h1>404 Not Found</h1>
+  <p>Looks like this page doesn't exist</p>
+  <br />
+  <img class="404-banner" src="/img/404.png" />
+  <br />
+  <a href="/">Go to index</a>
 </EmptyLayout>

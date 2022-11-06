@@ -6,9 +6,6 @@ const description = "Search things on the web";
 ---
 
 <SearchLayout title={title} description={description}>
-  <h1 class="search-title">NaviNet Search <p>Public Test</p></h1>
-  <p class="center">{description}</p>
-  <br />
   <div id="search-box">
     <script>
       (function () {
@@ -26,16 +23,8 @@ const description = "Search things on the web";
 </SearchLayout>
 
 <style is:inline>
-  h1.search-title {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-  }
-  h1.search-title p {
-    font-size: 1rem;
-    font-style: italic;
-    margin-left: 0.5rem;
-    font-weight: 400;
+  #search-box {
+    width: 100%;
   }
   .gsc-control-cse {
     font-family: inherit;
@@ -125,5 +114,19 @@ const description = "Search things on the web";
 
   .gcsc-more-maybe-branding-root {
     display: none;
+  }
+  .gsc-webResult.gsc-result,
+  .gsc-results .gsc-imageResult {
+    border: var(--color-border-subtle);
+    background: inherit;
+    border-radius: var(--radius-1);
+  }
+  .gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+    background: none;
+    font-size: 0.9rem;
+  }
+  .gsc-results .gsc-cursor-box .gsc-cursor-page {
+    background: none;
+    font-size: 0.9rem;
   }
 </style>
