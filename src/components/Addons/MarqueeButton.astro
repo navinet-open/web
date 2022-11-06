@@ -1,11 +1,10 @@
 ---
-const { href, img, text } = Astro.props;
+const { href, rel, img, text } = Astro.props;
 ---
 
-<a href={href}><img src={img} alt={text} /></a>
+<a href={href} rel={rel}><img src={img} alt={text} /></a>
 
 <style>
-  a,
   img {
     display: block;
     width: 88px;

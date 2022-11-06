@@ -44,16 +44,19 @@ const today = new Date();
   }
   @media (max-width: 500px) {
     footer section.flex {
+      width: 50%;
       flex-direction: column;
       align-items: flex-start;
       gap: 0.15rem;
     }
     footer section.flex a:first-child,
     a {
+      width: 100%;
+      text-align: left;
       padding-left: 0;
       border-left: 0;
       font-size: 0.95rem;
-      padding: 0.15rem;
+      padding: 0.25rem;
     }
   }
 </style>

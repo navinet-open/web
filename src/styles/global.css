@@ -3,13 +3,17 @@
 :root {
   /* background colors */
   --color-body: #0d3b77;
-  --color-main-content: #2f69af;
+  --color-main-content: linear-gradient(
+    180deg,
+    rgb(61, 115, 182) 0%,
+    rgb(25, 81, 149) 100%
+  );
   --color-bg-container: rgba(0, 0, 0, 0.15);
   --color-bg-variant: #282828;
   /* element colors */
   --color-text: #fff;
-  --color-href: #8ed6ff;
-  --color-href-hover: #bde6ff;
+  --color-href: #42eaa4;
+  --color-href-hover: #68febf;
   --color-text-muted: #ffffff85;
   --color-border: 1px solid #00000059;
   --color-border-subtle: 1px solid rgba(255, 255, 255, 0.35);

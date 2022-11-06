@@ -1,0 +1,30 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header/Header.astro";
+import Footer from "../components/Footer.astro";
+import Stats from "../components/Header/Stats.astro";
+import Aside from "../components/Aside/Aside.astro";
+import AsideStatic from "../components/Aside/AsideStatic.astro";
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <div class="main-container">
+    <Stats />
+    <Header />
+    <main>
+      <div class="row top-br">
+        <section class="col content content-left">
+          <slot />
+        </section>
+        <Aside>
+          <AsideStatic />
+        </Aside>
+      </div>
+    </main>
+    <Footer />
+  </div>
+</html>

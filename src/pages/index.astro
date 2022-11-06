@@ -1,7 +1,6 @@
 ---
 import HomeLayout from "../layouts/HomeLayout.astro";
 import Aside from "../components/Aside/Aside.astro";
-import AsideStatic from "../components/Aside/AsideStatic.astro";
 
 const title = "NaviNet";
 const description = "The open source web portal";
@@ -9,31 +8,30 @@ const description = "The open source web portal";
 
 <HomeLayout title={title} description={description}>
   <main>
-    <section class="paragraph">
-      <p class="subtitle">Welcome to <b>NaviNet</b></p>
-      <p>
-        NaviNet is a web portal created for those who love the old net but also
-        for those who hate the new web and want to take back the internet and
-        return to the good old times.
-      </p>
-      <p>
-        Learn more about us on the <a href="/about">about</a> page. Thanks for using
-        NaviNet!
-      </p>
-    </section>
-    <div class="row">
+    <div class="row top-br">
       <Aside>
         <h1 class="side-title">Services</h1>
         <section class="card side-placeholder">coming soon</section>
       </Aside>
-      <section class="col content">
+      <section class="col content content-right">
         <h1>In construction</h1>
         <p>
           As of now NaviNet is on a alpha stage meaning that most of the website
           functionality or it doesn't work or being changed.
         </p>
         <hr />
-        <h1>Support NaviNet</h1>
+        <p class="subtitle">Welcome to <b>NaviNet</b></p>
+        <p>
+          NaviNet is a web portal created for those who love the old net but
+          also for those who hate the new web and want to take back the internet
+          and return to the good old times.
+        </p>
+        <p>
+          Learn more about us on the <a href="/about">about</a> page. Thanks for
+          using NaviNet!
+        </p>
+        <hr />
+        <p class="subtitle">Support NaviNet</p>
         <p>If you like to support us just add our button to your website!</p>
         <a
           class="href-img"
@@ -52,9 +50,6 @@ const description = "The open source web portal";
           alt="NaviNet Button"/&gt;&lt;/a&gt;
         </code>
       </section>
-      <Aside>
-        <AsideStatic />
-      </Aside>
     </div>
   </main>
 </HomeLayout>

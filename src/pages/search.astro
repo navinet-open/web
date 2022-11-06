@@ -1,0 +1,129 @@
+---
+import SearchLayout from "../layouts/SearchLayout.astro";
+
+const title = "NaviNet Search";
+const description = "Search things on the web";
+---
+
+<SearchLayout title={title} description={description}>
+  <h1 class="search-title">NaviNet Search <p>Public Test</p></h1>
+  <p class="center">{description}</p>
+  <br />
+  <div id="search-box">
+    <script>
+      (function () {
+        var cx = "942443ca8393e4329";
+        var gcse = document.createElement("script");
+        gcse.type = "text/javascript";
+        gcse.async = true;
+        gcse.src = "https://cse.google.com/cse.js?cx=" + cx;
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+    </script>
+    <gcse:search></gcse:search>
+  </div>
+</SearchLayout>
+
+<style is:inline>
+  h1.search-title {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+  }
+  h1.search-title p {
+    font-size: 1rem;
+    font-style: italic;
+    margin-left: 0.5rem;
+    font-weight: 400;
+  }
+  .gsc-control-cse {
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    background: var(--color-bg-container);
+    border: var(--color-border-subtle);
+    border-radius: var(--radius-2);
+    box-shadow: var(--color-container-shadow);
+  }
+  button.gsc-search-button {
+    padding-block: 0.65rem;
+    background: var(--color-bg-container);
+    border: var(--color-border-subtle);
+    border-radius: var(--radius-1);
+    box-shadow: var(--color-container-shadow);
+    cursor: pointer;
+    transition: 100ms;
+  }
+  button.gsc-search-button svg {
+    fill: var(--color-href);
+  }
+  button.gsc-search-button:hover {
+    background-color: var(--color-href);
+    border: var(--color-border-subtle);
+  }
+  button.gsc-search-button:active,
+  button.gsc-search-button:focus {
+    background-color: var(--color-href);
+    border: var(--color-border-subtle);
+    fill: #000;
+  }
+  button.gsc-search-button:hover svg,
+  button.gsc-search-button:active svg,
+  button.gsc-search-button:focus svg {
+    fill: #000;
+  }
+  .gsc-input-box {
+    display: flex;
+    align-items: center;
+    border-radius: var(--radius-1);
+    background: var(--color-bg-container);
+    box-shadow: var(--color-container-shadow);
+  }
+  .gsc-input {
+    background: inherit;
+    color: var(--color-text);
+  }
+  a.gsst_a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  .gsst_a .gscb_a {
+    padding: 0 0.5rem 0 0.5rem;
+    font-size: 1.5rem;
+    color: var(--color-href);
+  }
+
+  .gsst_a:hover .gscb_a,
+  .gsst_a:focus .gscb_a {
+    color: var(--color-href-hover);
+  }
+  .gsc-orderby {
+    margin-right: 0.5rem;
+  }
+
+  .gsc-result-info,
+  .gsc-orderby-label {
+    color: var(--color-text);
+    opacity: 0.8;
+  }
+  .gsc-selected-option-container {
+    color: var(--color-text);
+    border-radius: var(--radius-1);
+    border: var(--color-border-subtle);
+    text-shadow: none;
+    background: inherit;
+  }
+  .gsc-above-wrapper-area {
+    border-bottom: none;
+    padding: 0;
+    margin-bottom: 0.25rem;
+  }
+
+  .gcsc-more-maybe-branding-root {
+    display: none;
+  }
+</style>

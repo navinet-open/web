@@ -37,13 +37,12 @@ const { content } = Astro.props;
       <Stats />
       <Header />
       <div class="row">
+        <Aside>
+          <AsideStatic />
+        </Aside>
         <section class="col content content-left">
           <slot />
         </section>
-        <Aside>
-          <AsideStatic />
-          <Aside />
-        </Aside>
       </div>
       <Footer />
     </div>

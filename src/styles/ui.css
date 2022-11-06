@@ -1,13 +1,26 @@
 /* container */
 
+@media (min-width: 800px) {
+  .row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+}
+
 div.main-container {
-  margin: 1rem auto 1rem auto;
-  border-radius: var(--radius-2);
+  margin: 0 auto;
+  border-bottom-left-radius: var(--radius-2);
+  border-bottom-right-radius: var(--radius-2);
   outline: var(--color-border);
   background: var(--color-main-content);
   max-width: var(--breakpoint);
   box-shadow: var(--shadow-main);
   overflow: hidden;
+}
+
+section.col {
+  width: 100%;
 }
 
 section.content {
@@ -20,34 +33,12 @@ section.content {
   text-shadow: var(--color-text-shadow);
 }
 
-section.content-left {
-  border: 0;
-  border-top: var(--color-border-subtle);
-  border-right: var(--color-border-subtle);
-  border-bottom: var(--color-border-subtle);
-  border-left: 0;
-}
-
-section.paragraph {
-  padding: 1rem;
-  max-width: 65ch;
-  text-shadow: var(--color-text-shadow);
-}
-
-.card {
-  padding: 0.5rem;
-  border-radius: var(--radius-1);
-  outline: var(--color-border-subtle);
-  box-shadow: var(--color-container-shadow);
-  background-color: var(--color-bg-container);
-}
-
-.card-ul > li {
-  margin-left: 1rem;
+.top-br {
+  margin-top: 1rem;
 }
 
 .subtitle {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 500;
 }
 
@@ -60,6 +51,26 @@ section.paragraph {
   user-select: none;
 }
 
+.card {
+  padding: 0.5rem;
+  border-radius: var(--radius-1);
+  outline: var(--color-border-subtle);
+  box-shadow: var(--color-container-shadow);
+  background-color: var(--color-bg-container);
+}
+
+section.content-right {
+  border: 0;
+  border-top: var(--color-border-subtle);
+  border-right: 0;
+  border-bottom: var(--color-border-subtle);
+  border-left: var(--color-border-subtle);
+}
+
+.card-ul > li {
+  margin-left: 1rem;
+}
+
 .href-img {
   margin-top: 0.15rem;
   display: inline-block;
@@ -69,16 +80,8 @@ section.paragraph {
   width: 100%;
 }
 
-.align-center {
+.center {
   text-align: center;
-}
-
-@media (min-width: 800px) {
-  .row {
-    width: 100%;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-  }
 }
 
 @media (max-width: 800px) {
