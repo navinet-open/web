@@ -6,24 +6,24 @@ const posts = (await Astro.glob("../../pages/news/*.mdx")).sort(
 );
 ---
 
-<div class="sidebar-mobile">
-  <aside class="col sidebar">
-    <section class="pod">
-      <p class="title-bar">News</p>
-      <section class="inner-pod">
-        <ul class="ul-list">
-          {
-            posts.map((post) => (
-              <li>
-                <a href={post.url}>{post.frontmatter.title}</a>
-              </li>
-            ))
-          }
-        </ul>
-      </section>
+<aside class="col sidebar">
+  <section class="pod">
+    <a class="title-bar" href="/news">News</a>
+    <section class="inner-pod">
+      <ul class="ul-list">
+        {
+          posts.map((post) => (
+            <li>
+              <a class="li-link" href={post.url}>
+                {post.frontmatter.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
     </section>
-  </aside>
-</div>
+  </section>
+</aside>
 
 <style>
   aside.sidebar {
@@ -34,14 +34,7 @@ const posts = (await Astro.glob("../../pages/news/*.mdx")).sort(
     margin-bottom: 1rem;
   }
   @media (max-width: 700px) {
-    div.sidebar-mobile {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
     aside.sidebar {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
       width: 100%;
     }
   }

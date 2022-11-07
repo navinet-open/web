@@ -28,44 +28,34 @@ const { page } = Astro.props;
 ---
 
 <MapLayout title={title} description={description}>
-  <ul class="games-ul cards">
-    {
-      page.data.map((page) => (
-        <li>
-          <a class="game-card" href={page.url}>
-            <span>
-              <img
-                class="game-banner"
-                src={page.frontmatter.image}
-                alt={page.frontmatter.title}
-              />
-            </span>
-            <span>{page.frontmatter.title}</span>
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+  <section class="pod">
+    <p class="title-bar">All Games</p>
+    <section class="inner-pod cards-flex">
+      <ul class="cards">
+        {
+          page.data.map((page) => (
+            <li class="game-card">
+              <a class="inner-game-card" href={page.url}>
+                <img
+                  class="game-banner"
+                  src={page.frontmatter.image}
+                  alt={page.frontmatter.title}
+                />
+                <div class="game-card-meta">
+                  <h1 class="game-title">{page.frontmatter.title}</h1>
+
+                  {page.frontmatter.categories.map((tag) => (
+                    <a class="game-tag pod" href={`/games/categories/${tag}`}>
+                      {tag}
+                    </a>
+                  ))}
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </section>
   <Paginator page={page} />
 </MapLayout>
-
-<style>
-  ul.games-ul {
-    list-style-type: none;
-  }
-  a.game-card {
-    padding: 0.75rem 0 0.5rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: var(--color-bg-container);
-    border: var(--color-border-subtle);
-    border-radius: var(--radius-1);
-    min-height: 120px;
-    max-height: 120px;
-  }
-  img.game-banner {
-    width: 100px;
-  }
-</style>

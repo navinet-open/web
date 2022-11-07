@@ -1,4 +1,5 @@
 ---
+import Paginator from "../../../components/Paginator.astro";
 import MapLayout from "../../../layouts/MapLayout.astro";
 import { generateCategoryData } from "../../../utils/games_cat.js";
 
@@ -39,24 +40,35 @@ const description = `Blog posts tagged with ${category}`;
 ---
 
 <MapLayout title={title} description={description}>
-  <ul class="games-ul cards">
-    {
-      posts.map((page) => (
-        <li>
-          <a class="game-card" href={page.url}>
-            <span>
-              <img
-                class="game-banner"
-                src={page.frontmatter.image}
-                alt={page.frontmatter.title}
-              />
-            </span>
-            <span>{page.frontmatter.title}</span>
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+  <section class="pod">
+    <p class="title-bar">Games with {category}</p>
+    <section class="inner-pod cards-flex">
+      <ul class="games-ul cards">
+        {
+          posts.map((page) => (
+            <li class="game-card">
+              <a class="inner-game-card" href={page.url}>
+                <img
+                  class="game-banner"
+                  src={page.frontmatter.image}
+                  alt={page.frontmatter.title}
+                />
+                <div class="game-card-meta">
+                  <h1 class="game-title">{page.frontmatter.title}</h1>
+
+                  {page.frontmatter.categories.map((tag) => (
+                    <a class="game-tag pod" href={`/games/categories/${tag}`}>
+                      {tag}
+                    </a>
+                  ))}
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </section>
 </MapLayout>
 
 <style>
